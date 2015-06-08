@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+<property>
+  <name>storage.data.store.class</name>
+  <value>org.apache.gora.hbase.store.HBaseStore</value>
+  <description>Default class for storing data</description>
+</property>
+<property>
+  <name>http.agent.name</name>
+  <value>Spider</value>
+</property>
+<property>
+<name>plugin.includes</name>
+<!--value>protocol-httpclient|urlfilter-regex|index-(basic|more)|query-(basic|site|url|lang)|indexer-solr|nutch-extensionpoints|protocol-httpclient|urlfilter-regex|parse-(text|html|msexcel|msword|mspowerpoint|pdf)|summary-basic|scoring-opic|urlnormalizer-(pass|regex|basic)protocol-http|urlfilter-regex|parse-(html|tika|metatags)|index-(basic|anchor|more|metadata)</value-->
+<value>protocol-http|urlfilter-regex|parse-(html|tika|text)|index-(basic|anchor)|urlnormalizer-(pass|regex|basic)|scoring-opic|index-anchor|index-more|languageidentifier|subcollection|feed|creativecommons|tld|indexer-solr</value> 
+<description>Regular expression naming plugin directory names to include. Any plugin not matching this expression is excluded. In any case you need at least include the nutch-extensionpoints plugin. By default Nutch includes crawling just HTML and plain text via HTTP,and basic indexing and search plugins. In order to use HTTPS please enable protocol-httpclient, but be aware of possible intermittent problems with the underlying commons-httpclient library.
+</description>
+</property>
+</configuration>
